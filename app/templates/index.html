@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael Scott Companion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="menu">
+      <button id="about-button">About</button>
+      <button id="mode-toggle">
+        <svg
+          id="sun"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#fff"
+          viewBox="0 0 122.88 122.88"
+        >
+          <title>sun-warm</title>
+          <path
+            d="M30,13.21A3.93,3.93,0,1,1,36.8,9.27L41.86,18A3.94,3.94,0,1,1,35.05,22L30,13.21Zm31.45,13A35.23,35.23,0,1,1,36.52,36.52,35.13,35.13,0,0,1,61.44,26.2ZM58.31,4A3.95,3.95,0,1,1,66.2,4V14.06a3.95,3.95,0,1,1-7.89,0V4ZM87.49,10.1A3.93,3.93,0,1,1,94.3,14l-5.06,8.76a3.93,3.93,0,1,1-6.81-3.92l5.06-8.75ZM109.67,30a3.93,3.93,0,1,1,3.94,6.81l-8.75,5.06a3.94,3.94,0,1,1-4-6.81L109.67,30Zm9.26,28.32a3.95,3.95,0,1,1,0,7.89H108.82a3.95,3.95,0,1,1,0-7.89Zm-6.15,29.18a3.93,3.93,0,1,1-3.91,6.81l-8.76-5.06A3.93,3.93,0,1,1,104,82.43l8.75,5.06ZM92.89,109.67a3.93,3.93,0,1,1-6.81,3.94L81,104.86a3.94,3.94,0,0,1,6.81-4l5.06,8.76Zm-28.32,9.26a3.95,3.95,0,1,1-7.89,0V108.82a3.95,3.95,0,1,1,7.89,0v10.11Zm-29.18-6.15a3.93,3.93,0,0,1-6.81-3.91l5.06-8.76A3.93,3.93,0,1,1,40.45,104l-5.06,8.75ZM13.21,92.89a3.93,3.93,0,1,1-3.94-6.81L18,81A3.94,3.94,0,1,1,22,87.83l-8.76,5.06ZM4,64.57a3.95,3.95,0,1,1,0-7.89H14.06a3.95,3.95,0,1,1,0,7.89ZM10.1,35.39A3.93,3.93,0,1,1,14,28.58l8.76,5.06a3.93,3.93,0,1,1-3.92,6.81L10.1,35.39Z"
+          />
+        </svg>
+        <svg
+          version="1.1"
+          id="moon"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 122.88 122.89"
+          style="enable-background: new 0 0 122.88 122.89"
+          xml:space="preserve"
+        >
+          <g>
+            <path
+              d="M49.06,1.27c2.17-0.45,4.34-0.77,6.48-0.98c2.2-0.21,4.38-0.31,6.53-0.29c1.21,0.01,2.18,1,2.17,2.21 c-0.01,0.93-0.6,1.72-1.42,2.03c-9.15,3.6-16.47,10.31-20.96,18.62c-4.42,8.17-6.1,17.88-4.09,27.68l0.01,0.07 c2.29,11.06,8.83,20.15,17.58,25.91c8.74,5.76,19.67,8.18,30.73,5.92l0.07-0.01c7.96-1.65,14.89-5.49,20.3-10.78 c5.6-5.47,9.56-12.48,11.33-20.16c0.27-1.18,1.45-1.91,2.62-1.64c0.89,0.21,1.53,0.93,1.67,1.78c2.64,16.2-1.35,32.07-10.06,44.71 c-8.67,12.58-22.03,21.97-38.18,25.29c-16.62,3.42-33.05-0.22-46.18-8.86C14.52,104.1,4.69,90.45,1.27,73.83 C-2.07,57.6,1.32,41.55,9.53,28.58C17.78,15.57,30.88,5.64,46.91,1.75c0.31-0.08,0.67-0.16,1.06-0.25l0.01,0l0,0L49.06,1.27 L49.06,1.27z"
+            />
+          </g>
+        </svg>
+      </button>
+    </div>
+    <main>
+      <div id="header">
+        <img
+          alt="Terrible sticker-style Michael Scott head cutout"
+          src="/static/images/MichaelScott.png"
+        />
+        <h1>Michael Scott <br />Companion</h1>
+      </div>
+      <div id="slider-container">
+        <h2>Sensitivity</h2>
+        <p>-</p>
+        <input
+          type="range"
+          min="1"
+          max="16"
+          value="7"
+          class="slider"
+          id="slider"
+        />
+        <p>+</p>
+      </div>
+      <button id="listen-button">Listen</button>
+      <div id="result">
+        <p id="say-something">Say something...</p>
+      </div>
+      <p id="message" hidden aria-hidden="true">
+        Your browser doesn't support Speech Recognition. Sorry.
+      </p>
+      <div id="follow">
+        <div>
+          <h2>Follow Mahmood</h2>
+          <a href="https://www.youtube.com/sadmoody">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              viewBox="0 0 3333 3333"
+              shape-rendering="geometricPrecision"
+              text-rendering="geometricPrecision"
+              image-rendering="optimizeQuality"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            >
+              <path
+                d="M1667 0c920 0 1667 746 1667 1667 0 920-746 1667-1667 1667C747 3334 0 2588 0 1667 0 747 746 0 1667 0zm913 1294s-18-129-74-185c-71-74-151-75-187-79-261-19-652-19-652-19h-1s-392 0-652 19c-36 4-116 5-187 79-56 56-74 185-74 185s-19 151-19 302v141c0 151 19 302 19 302s18 129 74 185c71 74 164 72 206 80 149 14 634 19 634 19s392-1 653-19c36-4 116-5 187-79 56-56 74-185 74-185s19-151 19-302v-141c0-151-19-302-19-302zm-1107 615v-524l504 263-504 261z"
+              />
+            </svg>
+          </a>
+
+          <a href="https://twitter.com/MoodyHikmet">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              viewBox="0 0 3333 3333"
+              shape-rendering="geometricPrecision"
+              text-rendering="geometricPrecision"
+              image-rendering="optimizeQuality"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            >
+              <path
+                d="M1667 0c920 0 1667 746 1667 1667 0 920-746 1667-1667 1667C747 3334 0 2588 0 1667 0 747 746 0 1667 0zm900 1108c-66 30-137 49-212 58 76-46 135-118 162-204-71 42-151 73-234 90-68-72-163-116-270-116-204 0-369 165-369 369 0 29 3 57 9 84-307-16-579-162-761-386-33 56-50 120-50 186 0 128 65 241 164 307-61-2-117-19-167-46v5c0 179 127 328 296 362-31 8-64 13-97 13-24 0-47-2-70-7 47 147 183 253 345 257-127 99-285 158-459 158-30 0-59-2-88-5 164 105 358 166 566 166 679 0 1051-563 1051-1051 0-16 0-32-1-48 72-52 135-117 184-191z"
+              />
+            </svg>
+          </a>
+        </div>
+        <div>
+          <h2>Follow Tabs</h2>
+          <a href="https://twitch.tv/ladyofcode">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              viewBox="0 0 333334 333334"
+              shape-rendering="geometricPrecision"
+              text-rendering="geometricPrecision"
+              image-rendering="optimizeQuality"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            >
+              <path
+                d="M166667 0c92047 0 166667 74620 166667 166667s-74620 166667-166667 166667S0 258714 0 166667 74620 0 166667 0zm-55369 98779v105771h35251v20048c545-519 851-797 1144-1090 5944-5930 11904-11845 17813-17811 843-851 1685-1196 2882-1192 12319 40 24639 48 36958-24 905-5 2030-472 2674-1108 7680-7575 15274-15237 22935-22831 859-851 1170-1700 1169-2885-30-25681-22-51361-22-77043v-1836H111299zm95369 75234h-14630v-44767h14630v44767zm-40077-44764v44706h-14896v-44706h14896zm-40007 120108v-19807H86463c-40-830-98-1472-98-2115-4-37267-4-74534 18-111802 1-1078 192-2200 529-3224 2956-8996 5991-17968 8931-26969 381-1166 861-1584 2105-1596h60c49098 38 98194 33 147291 33 481-1 963 0 1647 0v2079c0 32119-8 64237 29 96356v63c-11 1306-409 2217-1339 3143-14244 14187-28460 28404-42648 42649-941 945-1864 1340-3205 1331-8642-61-17285 9-25927-67-1656-15-2839 418-4017 1622-5701 5827-11486 11572-17287 17300-551 545-1418 1083-2144 1090-3620 35-7240 47-10860 49h-2173c-3379-2-6758-8-10137-13-170 0-341-61-654-121z"
+              />
+            </svg>
+          </a>
+
+          <a href="https://twitter.com/ladyofcode">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              viewBox="0 0 3333 3333"
+              shape-rendering="geometricPrecision"
+              text-rendering="geometricPrecision"
+              image-rendering="optimizeQuality"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            >
+              <path
+                d="M1667 0c920 0 1667 746 1667 1667 0 920-746 1667-1667 1667C747 3334 0 2588 0 1667 0 747 746 0 1667 0zm900 1108c-66 30-137 49-212 58 76-46 135-118 162-204-71 42-151 73-234 90-68-72-163-116-270-116-204 0-369 165-369 369 0 29 3 57 9 84-307-16-579-162-761-386-33 56-50 120-50 186 0 128 65 241 164 307-61-2-117-19-167-46v5c0 179 127 328 296 362-31 8-64 13-97 13-24 0-47-2-70-7 47 147 183 253 345 257-127 99-285 158-459 158-30 0-59-2-88-5 164 105 358 166 566 166 679 0 1051-563 1051-1051 0-16 0-32-1-48 72-52 135-117 184-191z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div id="modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times; close</span>
+          <p>
+            Visualising large numbers is very hard for humans. Can you visualise
+            the difference between 100,000 and 1,000,000 apart from being "a
+            lot"? Probably not. So we’ve made something that might help with
+            showing the speed of COVID-19 spread through both sight and sound!
+          </p>
+
+          <p>
+            Projections are based on the previous 14 days’ worth of data to show
+            the current state of the world. They might be a little different
+            than the official numbers coming out - but they should be pretty
+            close... We're trying to predict the future here!
+          </p>
+
+          <p>
+            Every beep you hear is a new case of COVID-19, and every rumble you
+            hear is a death
+          </p>
+
+          <p>
+            This website was built live on twitch by sadmoody. Throw me a follow
+            and come hang out next time I'm live!
+          </p>
+
+          <p>
+            Thanks so much to vinny_code for all the help, and zero thanks to
+            the chat for keeping me constantly distracted.
+          </p>
+
+          <p>Stay inside. Wash your hands. Stay safe.</p>
+        </div>
+      </div>
+
+      <div id="video-modal">
+        <video
+          id="video0"
+          class="videos"
+          preload="auto"
+          src="/static/clips/twss0.mp4"
+          playsinline autoplay muted
+        ></video>
+        <video
+          id="video1"
+          class="videos"
+          preload="auto"
+          src="/static/clips/twss1.mp4"
+          playsinline autoplay muted
+        ></video>
+        <video
+          id="video2"
+          class="videos"
+          preload="auto"
+          src="/static/clips/twss2.mp4"
+          playsinline autoplay muted
+        ></video>
+        <video
+          id="video3"
+          class="videos"
+          preload="auto"
+          src="/static/clips/twss3.mp4"
+          playsinline autoplay muted
+        ></video>
+        <video
+          id="video4"
+          class="videos"
+          preload="auto"
+          src="/static/clips/twss4.mp4"
+          playsinline autoplay muted
+        ></video>
+        <video
+          id="video5"
+          class="videos"
+          preload="auto"
+          src="/static/clips/twss5.mp4"
+          playsinline autoplay muted
+        ></video>
+        <video
+          id="video6"
+          class="videos"
+          preload="auto"
+          src="/static/clips/twss6.mp4"
+          playsinline autoplay muted
+        ></video>
+        <p id="lewd-text"></p>
+      </div>
+    </main>
+
+    <script>
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+      window.addEventListener("resize", () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      });
+
+      const slider = document.getElementById("slider");
+      const modal = document.getElementById("modal");
+      const aboutButton = document.getElementById("about-button");
+      const span = document.getElementsByClassName("close")[0];
+
+      let sliderValue = localStorage.getItem("slider") || 7;
+      slider.value = sliderValue;
+      slider.addEventListener(
+        "change",
+        function () {
+          localStorage.setItem("slider", slider.value);
+        },
+        false
+      );
+
+      aboutButton.onclick = function () {
+        modal.style.display = "block";
+      };
+
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const button = document.getElementById("listen-button");
+        const result = document.getElementById("result");
+        const saySomething = document.getElementById("say-something");
+        const main = document.getElementsByTagName("main")[0];
+        let listening = false;
+        let cutoffTimer;
+        let timedOut = false;
+        let unmuted = false;
+
+        const SpeechRecognition =
+          window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        if (typeof SpeechRecognition !== "undefined") {
+          const recognition = new SpeechRecognition();
+
+          const stop = () => {
+            saySomething.style.display = "none";
+            main.classList.remove("speaking");
+            recognition.stop();
+            button.textContent = "Listen";
+          };
+
+          const start = () => {
+            saySomething.style.display = "block";
+            main.classList.add("speaking");
+            recognition.start();
+            button.textContent = "Stop listening";
+            timedOut = false;
+          };
+
+          const onResult = (event) => {
+            result.innerHTML = "";
+            const res = event.results[event.results.length - 1];
+            const text = document.createTextNode(res[0].transcript);
+            const p = document.createElement("p");
+
+            clearTimeout(cutoffTimer);
+
+            if (res.isFinal && !timedOut) {
+              button.click();
+              clearTimeout(cutoffTimer);
+              p.classList.add("final");
+              checkLewdness(text.wholeText);
+            } else if (!timedOut) {
+              cutoffTimer = setTimeout(() => {
+                button.click();
+                p.classList.add("final");
+                checkLewdness(text.wholeText);
+                timedOut = true;
+              }, 2000);
+            }
+
+            p.appendChild(text);
+            result.appendChild(p);
+          };
+
+          recognition.continuous = true;
+          recognition.interimResults = true;
+          recognition.addEventListener("result", onResult);
+          button.addEventListener("click", (event) => {
+            listening ? stop() : start();
+            listening = !listening;
+            if (!unmuted){
+              for (let i = 0; i < 7; i++) {
+                let vid = document.getElementById("video" + i);
+                vid.muted = false;
+              }
+              unmuted = true;
+            }
+          });
+        } else {
+          button.remove();
+          const message = document.getElementById("message");
+          message.removeAttribute("hidden");
+          message.setAttribute("aria-hidden", "false");
+        }
+
+        const checkLewdness = (phrase) => {
+          const response = fetch("/api/twss", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ sent: phrase , sensitivity: document.getElementById("slider").value}),
+          })
+            .then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+              console.log(data);
+              if (data["trigger"] == true || data["trigger"] == "True") {
+                initiateScott(data["sent"]);
+              } else {
+                button.click();
+                timedOut = false;
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+              button.click();
+              timedOut = false;
+            });
+
+        };
+
+        const initiateScott = (phrase) => {
+          let videoModal = document.getElementById("video-modal");
+          let lewdText = document.getElementById("lewd-text");
+          let number = Math.floor(Math.random() * 7);
+          let vid = document.getElementById("video" + number);
+
+          videoModal.style.display = "block";
+          vid.style.display = "block";
+          lewdText.textContent = phrase;
+          vid.play();
+
+          vid.onended = () => {
+            setTimeout(() => {
+              button.click();
+              document.getElementById("video-modal").style.display = "none";
+              vid.style.display = "none";
+              timedOut = false;
+            }, 100);
+          };
+        };
+      });
+
+      const toggle = document.getElementById("mode-toggle");
+
+      const storedTheme =
+        localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      if (storedTheme) {
+        document.documentElement.setAttribute("data-theme", storedTheme);
+        if (storedTheme === "dark") {
+          sun.style.display = "none";
+          moon.style.display = "block";
+        } else {
+          sun.style.display = "block";
+          moon.style.display = "none";
+        }
+      }
+
+      toggle.onclick = function () {
+        const sun = document.getElementById("sun");
+        const moon = document.getElementById("moon");
+        let currentTheme = document.documentElement.getAttribute("data-theme");
+        let targetTheme = "light";
+
+        if (currentTheme === "light") {
+          targetTheme = "dark";
+        }
+
+        document.documentElement.setAttribute("data-theme", targetTheme);
+        if (targetTheme === "dark") {
+          sun.style.display = "none";
+          moon.style.display = "block";
+        } else {
+          sun.style.display = "block";
+          moon.style.display = "none";
+        }
+        localStorage.setItem("theme", targetTheme);
+      };
+    </script>
+  </body>
+</html>
